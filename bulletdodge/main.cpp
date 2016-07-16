@@ -32,7 +32,7 @@ static void version()
 		"" PROGRAM_NAME " home page: <" PROGRAM_WEBSITE ">\n"
 	);
 
-	SF->getSAMP()->getDialog()->ShowDialog(1, 0, "nope", buf, "Hide", "");
+	SF->getSAMP()->getDialog()->ShowDialog(1, 0, PROGRAM_NAME, buf, "Hide", "");
 	return;
 }
 
