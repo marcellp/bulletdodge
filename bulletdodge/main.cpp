@@ -78,7 +78,7 @@ void CALLBACK mainloop()
 		if (!SF->getSAMP()->IsInitialized())
 			return;
 
-		pprintf("bulletdodge " PROGRAM_VERSION " has been loaded, use /bd for general help.");
+		pprintf("bulletdodge " PROGRAM_VERSION " has been loaded, use /b(ullet)d(odge) for general help.");
 		SF->getSAMP()->registerChatCommand("bd", cmd_bulletdodge);
 		SF->getSAMP()->registerChatCommand("bulletdodge", cmd_bulletdodge);
 		SF->getRakNet()->registerRakNetCallback(RakNetScriptHookType::RAKHOOK_TYPE_INCOMING_PACKET, bd_packet);
