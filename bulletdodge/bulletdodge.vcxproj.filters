@@ -2,6 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="bd_handler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="SFAPI">
@@ -494,5 +495,8 @@
     <ClInclude Include="game_api\game_api.h">
       <Filter>game</Filter>
     </ClInclude>
+    <ClInclude Include="main.hpp" />
+    <ClInclude Include="bd_handler.hpp" />
+    <ClInclude Include="bulletdodger.hpp" />
   </ItemGroup>
 </Project>

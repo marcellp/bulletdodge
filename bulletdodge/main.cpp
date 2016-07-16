@@ -44,7 +44,7 @@ static void usage()
 		PROGRAM_NAME " is a modification for San Andreas: Multiplayer that blocks\n"
 		"a certain percentage of all incoming bullet sync packets. This makes bulletdodge\n"
 		"an ideal substitute for health hacks on servers where this behavior is properly checked.\n\n"
-		"\t/bd ([amount, 0-100])\n\t\tBlocks 'amount' percentage of all incoming bullet sync packets.\n"
+		"\t/bd ([0-100])\n\t\tBlocks 0-100%% of all incoming bullet sync packets.\n"
 		HELP_OPTION_DESCRIPTION
 		VERSION_OPTION_DESCRIPTION
 	);
@@ -56,15 +56,14 @@ static void usage()
 void CALLBACK cmd_bulletdodge(std::string param)
 {
 	char *param_str = _strdup(param.c_str());
-	int font_size = 0;
 
 	if (param.empty() || !_strcmpi(param_str, "help"))
 		usage();
 	else if (!_strcmpi(param_str, "version"))
 		version();
-	else {
+	else
 		bulletdodge_do(param_str);
-	}
+
 }
 
 void CALLBACK mainloop()
@@ -81,6 +80,7 @@ void CALLBACK mainloop()
 
 		pprintf("bulletdodge " PROGRAM_VERSION " has been loaded, use /bd for general help.");
 		SF->getSAMP()->registerChatCommand("bd", cmd_bulletdodge);
+		SF->getRakNet()->registerRakNetCallback(RakNetScriptHookType::RAKHOOK_TYPE_INCOMING_PACKET, bd_packet);
 
 		init = true;
 	}
