@@ -20,14 +20,14 @@ void bulletdodge_do(char *arg)
 	int amount;
 	
 	if (!str_to_int(arg, &amount, 10))
-		return pprintf("Érvénytelen érték.");
+		return pprintf("Invalid amount.");
 
 	if (amount < 0 || amount > 100)
-		return pprintf("Érvénytelen érték (0 és 100 között).");
+		return pprintf("Invalid amount (must be between 0 and 100).");
 
 	ratio = amount;
 	
-	pprintf("Ratio of blocked packets set to %d%%.", ratio);
+	pprintf("Ratio of blocked packets set to %d percent.", ratio);
 }
 
 bool CALLBACK bd_packet(stRakNetHookParams *params)
