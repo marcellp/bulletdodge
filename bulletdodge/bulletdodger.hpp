@@ -6,9 +6,9 @@
 #define PROGRAM_WEBSITE "http://marcellp.github.io"
 #define PROGRAM_BUGREPORT_EMAIL "marcellp0+bulletdodge@gmail.com"
 #define HELP_OPTION_DESCRIPTION \
-  "\t/bd help\n\t\tdisplay this help and exit\n"
+  "\t/b(ullet)d(odger) help\n\t\tdisplay this help and exit\n"
 #define VERSION_OPTION_DESCRIPTION \
-  "\t/bd version\n\t\toutput version information and exit\n"
+  "\t/b(ullet)d(odger) version\n\t\toutput version information and exit\n"
 
 #include <assert.h>
 #include <windows.h>
